@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | NAMRIA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Avenir Next font via Google Fonts fallback (Montserrat as similar) -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Avenir Next', Montserrat, Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 800px;
+      margin: 28px auto 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px #e4e4e4;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 24px 12px 10px;
+    }
+    header h1 {
+      font-size: 1.25em;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .about-img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 10px #dfdfdf;
+    }
+    .description {
+      font-size: 0.85em;
+      color: #252525;
+      text-align: justify;
+      line-height: 1.5;
+      margin: auto;
+      font-family: inherit;
+    }
+    .description a {
+      color: #2574a9;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    /* Modern minimalist divider */
+    .modern-divider {
+      width: 100%;
+      height: 0;
+      border: none;
+      border-top: 1.2px solid #e2e2e2;
+      margin: 26px 0 22px 0;
+      position: relative;
+      background: none;
+    }
+    /* Embed section: show full height */
+    .embed-section {
+      width: 100vw;
+      max-width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 0;
+    }
+    .embed-section .embed-wrapper {
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .embed-section iframe {
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 100vw;
+      min-height: 780px;
+      height: 80vh;
+      border: none;
+      border-radius: 0;
+      background: #fff;
+      display: block;
+      margin: 0;
+      overflow: hidden;
+    }
+    /* Footer */
+    .footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 52px;
+      background: #f8f8f8;
+      border-top: 1.2px solid #e3e3e3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-sizing: border-box;
+      font-family: inherit;
+      z-index: 2;
+    }
+    .footer .social-icons {
+      display: flex;
+      gap: 11px;
+      align-items: center;
+    }
+    .footer .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      color: #0d6efd;
+      background: #e9f1fa;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+      border: none;
+      outline: none;
+      font-size: 1em;
+    }
+    .footer .social-icons a:hover {
+      background: #0d6efd;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(13,110,253,0.10);
+    }
+    .footer .copyright {
+      font-size: 0.76em;
+      color: #888;
+      text-align: right;
+      letter-spacing: 0.01em;
+      font-family: inherit;
+      font-weight: 500;
+      min-width: 90px;
+      margin-left: auto;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding-bottom: 100px;
+      }
+      header {
+        padding: 14px 6px 9px;
+      }
+      .footer {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 8px 10px;
+      }
+      .footer .copyright {
+        margin: 0;
+        text-align: left;
+        min-width: 0;
+      }
+      .embed-section, .embed-section .embed-wrapper, .embed-section iframe {
+        min-height: 440px;
+        height: 62vw;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+      }
+    }
+    @media (max-width: 450px) {
+      header h1 {
+        font-size: 1em;
+      }
+      .footer .social-icons a {
+        width: 22px;
+        height: 22px;
+        font-size: 0.9em;
+      }
+      .container {
+        padding-bottom: 120px;
+      }
+      .embed-section, .embed-section .embed-wrapper, .embed-section iframe {
+        min-height: 310px;
+        height: 38vh;
+      }
+      .footer .copyright {
+        font-size: 0.7em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>About Us</h1>
+      <img
+        class="about-img"
+        src="https://namria.maps.arcgis.com/sharing/rest/content/items/b3b7932c0df944179bc81328dd665725/resources/lrdad%20site%20map%20landing%20page.png?token=3NKHt6i2urmWtqOuugvr9TuVR0ZO2qAaSu-drIZrsjlC1JVAgWd4HuBShgstKkEBPTywgt0PAZdjdIsXrTrNCCHyr4Aupe5VcUIflwVIHyvVifF4JitoyDvM7ZZyKbN-2J_KbhqD-zwhKNtjUapAbHDLG1-LT4eywdVClX1TH8FXl-IW_uUY2nZcIEcgWa0n1uN3EX8V29y8L2WtNK7LrLGUKtXApf2qFQHl9l1Zl4E.&v=1750138077224"
+        alt="NAMRIA Land Cover Map"
+      >
+      <div class="description">
+        At the National Mapping and Resource Information Authority (NAMRIA), one of our key mandates is to generate and continuously update the nationwide land cover map using the latest satellite imagery complemented by ground/image validation. This is implemented through the Land Cover Mapping Project, one of the major strategic initiatives NAMRIA under the Resource Assessment and Mapping core function, undertaken by the Land Resource Data Analysis Division (LRDAD) of the Resource Data Analysis Branch (RDAB).
+        <br><br>
+        The land cover data provide detailed information on the spatial location, extent, and distribution of the 12 land cover types, namely: Closed Forest, Open Forest, Mangrove Forest, Brush/Shrubs, Grassland, Perennial Crop, Annual Crop, Open/Barren, Built-up, Marshland/Swamp, Fishpond, and Inland Water. For the current updating cycle, the preliminary land cover map is generated from the digital interpretation of Sentinel-2 satellite imagery with 10-meter resolution courtesy of the European Space Agency (ESA), accessed via <a href="https://scihub.copernicus.eu/" target="_blank" rel="noopener">https://scihub.copernicus.eu/</a> or <a href="https://eos.com/landviewer/" target="_blank" rel="noopener">https://eos.com/landviewer/</a>.
+      </div>
+    </header>
+    <hr class="modern-divider">
+    <div class="embed-section">
+      <div class="embed-wrapper">
+        <iframe
+          src="https://bcballesteros.github.io/contact-form/index.html"
+          title="Contact Form"
+          allowfullscreen
+          scrolling="no"
+          style="overflow:hidden;"
+        ></iframe>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="social-icons">
+        <a href="https://facebook.com/" target="_blank" title="Facebook" aria-label="Facebook">
+          <!-- Facebook: simple line theme -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 8h-2a2 2 0 0 0-2 2v2h4M12 16v-4"/></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" title="X.com" aria-label="X">
+          <!-- X: simple line theme -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M17 7L7 17M7 7l10 10"/></svg>
+        </a>
+        <a href="https://youtube.com/" target="_blank" title="YouTube" aria-label="YouTube">
+          <!-- YouTube: simple line theme -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><polygon points="10 9 16 12 10 15 10 9"/></svg>
+        </a>
+        <a href="#" title="Share" aria-label="Share" onclick="sharePage(event)">
+          <!-- Share: simple line theme (arrow up right from square) -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M12 16V8M12 8l4 4M12 8l-4 4"/></svg>
+        </a>
+      </div>
+      <div class="copyright">
+        Copyright 2025
+      </div>
+    </div>
+  </div>
+  <script>
+    function sharePage(e) {
+      e.preventDefault();
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        });
+      } else {
+        prompt('Copy this page link:', window.location.href);
+      }
+    }
+  </script>
+</body>
+</html>
