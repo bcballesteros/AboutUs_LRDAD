@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#219150">
+  <title>About Us | NAMRIA</title>
+  <style>
+    /* Root Variables for Colors and Sizes */
+    :root {
+      --primary-color: #219150;
+      --primary-light: #4cd486;
+      --primary-dark: #1a7340;
+      --text-color: #2c3e50;
+      --bg-color: #f8faf9;
+      --card-bg: #ffffff;
+      --divider-color: #e5e9e6;
+      --shadow-color: rgba(44, 62, 80, 0.08);
+      --font-size-base: 16px;
+      font-size: var(--font-size-base);
+    }
+
+    /* Base Styles */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Avenir Next', 'Montserrat', Arial, sans-serif;
+      background: var(--bg-color);
+      margin: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Container and Layout */
+    .container {
+      max-width: 900px;
+      margin: 32px auto 0;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px var(--shadow-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-section {
+      margin: 4px 46px;
+    }
+
+    /* Header Styles */
+    header {
+      padding: 28px 0 10px;
+    }
+
+    header h1 {
+      font-size: 1.25em;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    /* Image Styles */
+    .about-img-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 16px;
+    }
+
+    .about-img {
+      display: block;
+      max-width: 90%;
+      min-width: 200px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+      box-shadow: 0 2px 12px var(--shadow-color);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Description Text Styles */
+    .description {
+      font-size: 0.95em;
+      line-height: 1.7;
+      color: var(--text-color);
+    }
+
+    .description p {
+      margin: 1.2em 0;
+      text-indent: 2em;
+    }
+
+    /* Enhanced Link Styles */
+    .description a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.2s;
+      padding: 0 2px;
+    }
+
+    .description a::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--primary-color);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .description a:hover {
+      color: var(--primary-light);
+    }
+
+    .description a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Embed Section */
+    .embed-section {
+      width: 100%;
+      position: relative;
+      background: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      min-height: 600px;
+      height: 70vh;
+      margin-top: 32px;
+    }
+
+    .embed-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .embed-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-color);
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    .embed-wrapper.loaded::before {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .embed-section iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: var(--bg-color);
+      margin: 0;
+    }
+
+    /* Footer Styles */
+    .footer {
+      position: relative;
+      width: 100%;
+      background: var(--card-bg);
+      border-top: 1px solid var(--divider-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      box-sizing: border-box;
+      margin-top: 32px;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--bg-color);
+      color: var(--primary-color);
+      border: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      box-shadow: 0 2px 8px var(--shadow-color);
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--shadow-color);
+    }
+
+    .social-icons svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover svg {
+      transform: scale(1.1);
+    }
+
+    /* Copyright Text */
+    .copyright {
+      font-size: 0.85em;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+
+    /* Print Styles */
+    @media print {
+      .footer {
+        display: none;
+      }
+      
+      .container {
+        box-shadow: none;
+        margin: 0;
+      }
+      
+      .description a {
+        text-decoration: underline;
+      }
+
+      .embed-section {
+        display: none;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .container {
+        margin: 16px auto;
+        max-width: 95vw;
+      }
+      .about-section {
+        margin: 4px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 0;
+        border-radius: 0;
+      }
+      .about-section {
+        margin: 4px 16px;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+      .about-img {
+        max-width: 95%;
+      }
+      .social-icons a {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="about-section">
+      <header>
+        <h1>About Us</h1>
+        <div class="about-img-wrapper">
+          <img
+            class="about-img"
+            src="https://namria.maps.arcgis.com/sharing/rest/content/items/b3b7932c0df944179bc81328dd665725/resources/lrdad%20site%20map%20landing%20page.png?token=3NKHt6i2urmWtqOuugvr9TuVR0ZO2qAaSu-drIZrsjlC1JVAgWd4HuBShgstKkEBPTywgt0PAZdjdIsXrTrNCCHyr4Aupe5VcUIflwVIHyvVifF4JitoyDvM7ZZyKbN-2J_KbhqD-zwhKNtjUapAbHDLG1-LT4eywdVClX1TH8FXl-IW_uUY2nZcIEcgWa0n1uN3EX8V29y8L2WtNK7LrLGUKtXApf2qFQHl9l1Zl4E.&v=1750138077224"
+            alt="NAMRIA Land Cover Map"
+            loading="lazy"
+          >
+        </div>
+        <div class="description">
+          <p>
+            At the National Mapping and Resource Information Authority (NAMRIA), one of our key mandates is to generate and continuously update the nationwide land cover map using the latest satellite imagery complemented by ground/image validation. This is implemented through the Land Cover Mapping Project, one of the major strategic initiatives NAMRIA under the Resource Assessment and Mapping core function, undertaken by the Land Resource Data Analysis Division (LRDAD) of the Resource Data Analysis Branch (RDAB).
+          </p>
+          <p>
+            The land cover data provide detailed information on the spatial location, extent, and distribution of the 12 land cover types, namely: Closed Forest, Open Forest, Mangrove Forest, Brush/Shrubs, Grassland, Perennial Crop, Annual Crop, Open/Barren, Built-up, Marshland/Swamp, Fishpond, and Inland Water. For the current updating cycle, the preliminary land cover map is generated from the digital interpretation of Sentinel-2 satellite imagery with 10-meter resolution courtesy of the European Space Agency (ESA), accessed via <a href="https://scihub.copernicus.eu/" target="_blank" rel="noopener">https://scihub.copernicus.eu/</a> or <a href="https://eos.com/landviewer/" target="_blank" rel="noopener">https://eos.com/landviewer/</a>.
+          </p>
+        </div>
+      </header>
+    </div>
+    <div class="embed-section">
+      <div class="embed-wrapper">
+        <iframe
+          src="https://bcballesteros.github.io/contact-form/index.html"
+          title="Contact Form"
+          allowfullscreen
+          scrolling="no"
+          style="overflow:hidden;"
+          onload="this.parentElement.classList.add('loaded')"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<p>Failed to load form. Please try again later.</p>'"
+        ></iframe>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="social-icons">
+        <a href="https://facebook.com/" target="_blank" title="Facebook" aria-label="Facebook" class="facebook">
+          <svg viewBox="0 0 48 48">
+            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
+            <path d="M26.5 48V31h5.5l.9-7H26.5v-4.5c0-1.8.6-3.5 3.3-3.5h3.5V9.7c-1.5-.2-3.3-.3-5.3-.3-6.2 0-10 3.8-10 10.7V24h-6v7h6v17h8.5z" fill="#fff"/>
+          </svg>
+        </a>
+        <a href="https://x.com/" target="_blank" title="X.com" aria-label="X" class="x">
+          <svg viewBox="0 0 48 48">
+            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
+            <path d="M14 16l20 16M34 16L14 32" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="https://youtube.com/" target="_blank" title="YouTube" aria-label="YouTube" class="youtube">
+          <svg viewBox="0 0 48 48">
+            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
+            <path d="M36 24.4c0-3.1-.2-5.3-.2-5.3s-.2-2.3-1-3.3c-1-1-2-1-2.5-1.1-3.5-.3-8.8-.3-8.8-.3s-5.3 0-8.8.3c-.5.1-1.5.1-2.5 1.1-.8 1-1 3.3-1 3.3S11 21.3 11 24.4v3c0 3.1.2 5.3.2 5.3s.2 2.3 1 3.3c1 1 2 1 2.5 1.1 3.5.3 8.8.3 8.8.3s5.3 0 8.8-.3c.5-.1 1.5-.1 2.5-1.1.8-1 1-3.3 1-3.3s.2-2.2.2-5.3v-3zM21 29v-9l8 4.5-8 4.5z" fill="#fff"/>
+          </svg>
+        </a>
+        <a href="#" title="Share" aria-label="Share" class="share" onclick="sharePage(event)">
+          <svg viewBox="0 0 48 48">
+            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
+            <path d="M24 34V14M24 14l8 8M24 14l-8 8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="copyright">
+        Copyright 2025
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Share Functionality
+    function sharePage(e) {
+      e.preventDefault();
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        });
+      } else {
+        prompt('Copy this page link:', window.location.href);
+      }
+    }
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Home') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      if (e.key === 'End') {
+        e.preventDefault();
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>
