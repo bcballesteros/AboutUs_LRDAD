@@ -110,10 +110,11 @@
       transform: scaleX(1);
       transform-origin: left;
     }
+    /* Return embed section to previous scale and change background */
     .embed-section {
       width: 100%;
       position: relative;
-      background: #f4faf6;
+      background: linear-gradient(135deg,#e3f5e6 0%,#cdeee1 100%);
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -133,7 +134,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #f4faf6;
+      background: linear-gradient(135deg,#e3f5e6 0%,#cdeee1 100%);
       z-index: 1;
       opacity: 1;
       transition: opacity 0.3s;
@@ -146,7 +147,7 @@
       width: 100%;
       height: 100%;
       border: none;
-      background: #f4faf6;
+      background: transparent;
       margin: 0;
     }
     .footer {
@@ -240,6 +241,10 @@
         height: 36px;
         font-size: 1.2em;
       }
+      .embed-section {
+        min-height: 200px;
+        height: 200px;
+      }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -259,7 +264,7 @@
         </div>
         <div class="description">
           <p>
-            At the National Mapping and Resource Information Authority (NAMRIA), one of our key mandates is to generate and continuously update the nationwide land cover map using the latest satellite imagery complemented by ground/image validation. This is implemented through the Land Cover Mapping Project, one of the major strategic initiatives NAMRIA under the Resource Assessment and Mapping core function, undertaken by the Land Resource Data Analysis Division (LRDAD) of the Resource Data Analysis Branch (RDAB).
+            bryAt the National Mapping and Resource Information Authority (NAMRIA), one of our key mandates is to generate and continuously update the nationwide land cover map using the latest satellite imagery complemented by ground/image validation. This is implemented through the Land Cover Mapping Project, one of the major strategic initiatives NAMRIA under the Resource Assessment and Mapping core function, undertaken by the Land Resource Data Analysis Division (LRDAD) of the Resource Data Analysis Branch (RDAB).
           </p>
           <p>
             The land cover data provide detailed information on the spatial location, extent, and distribution of the 12 land cover types, namely: Closed Forest, Open Forest, Mangrove Forest, Brush/Shrubs, Grassland, Perennial Crop, Annual Crop, Open/Barren, Built-up, Marshland/Swamp, Fishpond, and Inland Water. For the current updating cycle, the preliminary land cover map is generated from the digital interpretation of Sentinel-2 satellite imagery with 10-meter resolution courtesy of the European Space Agency (ESA), accessed via <a href="https://scihub.copernicus.eu/" target="_blank" rel="noopener">https://scihub.copernicus.eu/</a> or <a href="https://eos.com/landviewer/" target="_blank" rel="noopener">https://eos.com/landviewer/</a>.
