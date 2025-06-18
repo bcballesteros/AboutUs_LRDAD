@@ -11,8 +11,8 @@
       --primary-light: #4cd486;
       --primary-dark: #1a7340;
       --text-color: #2c3e50;
-      --card-bg: rgba(255,255,255,0.85); /* Lower opacity for white background */
-      --shadow-color: rgba(44, 62, 80, 0.08);
+      --card-bg: rgba(232, 245, 233, 0.92); /* very light green, slightly transparent */
+      --shadow-color: rgba(76, 212, 134, 0.16); /* soft green shadow */
       --font-size-base: 16px;
       font-size: var(--font-size-base);
     }
@@ -24,7 +24,7 @@
       margin: 0;
       color: var(--text-color);
       line-height: 1.6;
-      background-color: #f4faf6; /* Light, no pattern */
+      background-color: #f4faf6;
     }
     .container {
       max-width: 900px;
@@ -161,6 +161,7 @@
       box-sizing: border-box;
       margin-top: 32px;
       backdrop-filter: blur(1px);
+      box-shadow: 0 -2px 12px var(--shadow-color);
     }
     .social-icons {
       display: flex;
