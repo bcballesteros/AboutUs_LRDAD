@@ -11,9 +11,7 @@
       --primary-light: #4cd486;
       --primary-dark: #1a7340;
       --text-color: #2c3e50;
-      --bg-color: #f8faf9;
       --card-bg: #ffffff;
-      --divider-color: #e5e9e6;
       --shadow-color: rgba(44, 62, 80, 0.08);
       --font-size-base: 16px;
       font-size: var(--font-size-base);
@@ -23,10 +21,15 @@
     }
     body {
       font-family: 'Avenir Next', 'Montserrat', Arial, sans-serif;
-      background: var(--bg-color);
       margin: 0;
       color: var(--text-color);
       line-height: 1.6;
+      /* Soft green with a minimal, organic topography pattern using SVG data-URI */
+      background-color: #f4faf6;
+      background-image:
+        url('data:image/svg+xml;utf8,<svg width="150" height="120" viewBox="0 0 150 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 Q45 80 70 115 T150 100" stroke="%23d8ede3" stroke-width="2" fill="none"/><path d="M0 40 Q60 70 120 35 T150 40" stroke="%23e6efe3" stroke-width="2" fill="none"/><path d="M0 90 Q50 60 120 90 T150 80" stroke="%23e3f2e5" stroke-width="1.5" fill="none"/></svg>');
+      background-repeat: repeat;
+      background-size: 300px 240px;
     }
     .container {
       max-width: 900px;
@@ -38,10 +41,10 @@
       overflow: hidden;
     }
     .about-section {
-      margin: 0 46px 4px 46px; /* Top margin set to 0 to remove gap before About Us */
+      margin: 0 46px 4px 46px;
     }
     header {
-      padding: 0 0 10px 0; /* Remove top padding */
+      padding: 0 0 10px 0;
     }
     header h1 {
       font-size: 1.25em;
@@ -114,7 +117,7 @@
     .embed-section {
       width: 100%;
       position: relative;
-      background: var(--bg-color);
+      background: #f4faf6; /* match body background */
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -134,7 +137,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--bg-color);
+      background: #f4faf6;
       z-index: 1;
       opacity: 1;
       transition: opacity 0.3s;
@@ -147,14 +150,14 @@
       width: 100%;
       height: 100%;
       border: none;
-      background: var(--bg-color);
+      background: #f4faf6;
       margin: 0;
     }
     .footer {
       position: relative;
       width: 100%;
       background: var(--card-bg);
-      border-top: 1px solid var(--divider-color);
+      border-top: 1px solid #e5e9e6;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -174,7 +177,7 @@
       width: 42px;
       height: 42px;
       border-radius: 12px;
-      background: var(--bg-color);
+      background: #f4faf6;
       color: var(--primary-color);
       border: none;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
