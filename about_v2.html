@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#219150">
   <title>About Us | NAMRIA</title>
   <style>
-    /* Root Variables for Colors and Sizes */
     :root {
       --primary-color: #219150;
       --primary-light: #4cd486;
@@ -19,12 +18,9 @@
       --font-size-base: 16px;
       font-size: var(--font-size-base);
     }
-
-    /* Base Styles */
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Avenir Next', 'Montserrat', Arial, sans-serif;
       background: var(--bg-color);
@@ -32,8 +28,6 @@
       color: var(--text-color);
       line-height: 1.6;
     }
-
-    /* Container and Layout */
     .container {
       max-width: 900px;
       margin: 32px auto 0;
@@ -43,16 +37,12 @@
       position: relative;
       overflow: hidden;
     }
-
     .about-section {
-      margin: 4px 46px;
+      margin: 0 46px 4px 46px; /* Top margin set to 0 to remove gap before About Us */
     }
-
-    /* Header Styles */
     header {
-      padding: 28px 0 10px;
+      padding: 0 0 10px 0; /* Remove top padding */
     }
-
     header h1 {
       font-size: 1.25em;
       letter-spacing: 0.5px;
@@ -60,8 +50,6 @@
       font-weight: 800;
       color: var(--primary-dark);
     }
-
-    /* Image Styles */
     .about-img-wrapper {
       display: flex;
       justify-content: center;
@@ -69,7 +57,6 @@
       margin-bottom: 24px;
       padding: 16px;
     }
-
     .about-img {
       display: block;
       max-width: 90%;
@@ -82,27 +69,21 @@
       animation: fadeInUp 0.6s ease forwards;
       box-shadow: 0 2px 12px var(--shadow-color);
     }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    /* Description Text Styles */
     .description {
-      font-size: 0.95em;
+      font-size: 0.85em;
       line-height: 1.7;
       color: var(--text-color);
     }
-
     .description p {
       margin: 1.2em 0;
       text-indent: 2em;
     }
-
-    /* Enhanced Link Styles */
     .description a {
       color: var(--primary-color);
       text-decoration: none;
@@ -111,7 +92,6 @@
       transition: color 0.2s;
       padding: 0 2px;
     }
-
     .description a::after {
       content: '';
       position: absolute;
@@ -124,17 +104,13 @@
       transform-origin: right;
       transition: transform 0.3s ease;
     }
-
     .description a:hover {
       color: var(--primary-light);
     }
-
     .description a:hover::after {
       transform: scaleX(1);
       transform-origin: left;
     }
-
-    /* Embed Section */
     .embed-section {
       width: 100%;
       position: relative;
@@ -146,13 +122,11 @@
       height: 70vh;
       margin-top: 32px;
     }
-
     .embed-wrapper {
       position: relative;
       width: 100%;
       height: 100%;
     }
-
     .embed-wrapper::before {
       content: '';
       position: absolute;
@@ -165,12 +139,10 @@
       opacity: 1;
       transition: opacity 0.3s;
     }
-
     .embed-wrapper.loaded::before {
       opacity: 0;
       pointer-events: none;
     }
-
     .embed-section iframe {
       width: 100%;
       height: 100%;
@@ -178,8 +150,6 @@
       background: var(--bg-color);
       margin: 0;
     }
-
-    /* Footer Styles */
     .footer {
       position: relative;
       width: 100%;
@@ -192,14 +162,11 @@
       box-sizing: border-box;
       margin-top: 32px;
     }
-
-    /* Social Icons */
     .social-icons {
       display: flex;
       gap: 16px;
       align-items: center;
     }
-
     .social-icons a {
       display: flex;
       align-items: center;
@@ -213,68 +180,51 @@
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       box-shadow: 0 2px 8px var(--shadow-color);
+      font-size: 1.6em;
+      text-decoration: none;
     }
-
     .social-icons a:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px var(--shadow-color);
+      color: var(--primary-dark);
+      background: #e7f8ee;
     }
-
-    .social-icons svg {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.2s ease;
-    }
-
-    .social-icons a:hover svg {
-      transform: scale(1.1);
-    }
-
-    /* Copyright Text */
     .copyright {
       font-size: 0.85em;
       color: var(--text-color);
       opacity: 0.8;
     }
-
-    /* Print Styles */
     @media print {
       .footer {
         display: none;
       }
-      
       .container {
         box-shadow: none;
         margin: 0;
       }
-      
       .description a {
         text-decoration: underline;
       }
-
       .embed-section {
         display: none;
       }
     }
-
-    /* Responsive Styles */
     @media (max-width: 900px) {
       .container {
         margin: 16px auto;
         max-width: 95vw;
       }
       .about-section {
-        margin: 4px 24px;
+        margin: 0 24px 4px 24px;
       }
     }
-
     @media (max-width: 600px) {
       .container {
         margin: 0;
         border-radius: 0;
       }
       .about-section {
-        margin: 4px 16px;
+        margin: 0 16px 4px 16px;
       }
       .footer {
         flex-direction: column;
@@ -287,9 +237,11 @@
       .social-icons a {
         width: 36px;
         height: 36px;
+        font-size: 1.2em;
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <div class="container">
@@ -330,28 +282,16 @@
     <div class="footer">
       <div class="social-icons">
         <a href="https://facebook.com/" target="_blank" title="Facebook" aria-label="Facebook" class="facebook">
-          <svg viewBox="0 0 48 48">
-            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
-            <path d="M26.5 48V31h5.5l.9-7H26.5v-4.5c0-1.8.6-3.5 3.3-3.5h3.5V9.7c-1.5-.2-3.3-.3-5.3-.3-6.2 0-10 3.8-10 10.7V24h-6v7h6v17h8.5z" fill="#fff"/>
-          </svg>
+          <i class="fab fa-facebook-f"></i>
         </a>
         <a href="https://x.com/" target="_blank" title="X.com" aria-label="X" class="x">
-          <svg viewBox="0 0 48 48">
-            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
-            <path d="M14 16l20 16M34 16L14 32" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-          </svg>
+          <i class="fab fa-x-twitter"></i>
         </a>
         <a href="https://youtube.com/" target="_blank" title="YouTube" aria-label="YouTube" class="youtube">
-          <svg viewBox="0 0 48 48">
-            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
-            <path d="M36 24.4c0-3.1-.2-5.3-.2-5.3s-.2-2.3-1-3.3c-1-1-2-1-2.5-1.1-3.5-.3-8.8-.3-8.8-.3s-5.3 0-8.8.3c-.5.1-1.5.1-2.5 1.1-.8 1-1 3.3-1 3.3S11 21.3 11 24.4v3c0 3.1.2 5.3.2 5.3s.2 2.3 1 3.3c1 1 2 1 2.5 1.1 3.5.3 8.8.3 8.8.3s5.3 0 8.8-.3c.5-.1 1.5-.1 2.5-1.1.8-1 1-3.3 1-3.3s.2-2.2.2-5.3v-3zM21 29v-9l8 4.5-8 4.5z" fill="#fff"/>
-          </svg>
+          <i class="fab fa-youtube"></i>
         </a>
         <a href="#" title="Share" aria-label="Share" class="share" onclick="sharePage(event)">
-          <svg viewBox="0 0 48 48">
-            <path d="M0 12C0 5.373 5.373 0 12 0h24c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H12C5.373 48 0 42.627 0 36V12z" fill="currentColor"/>
-            <path d="M24 34V14M24 14l8 8M24 14l-8 8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <i class="fas fa-share-nodes"></i>
         </a>
       </div>
       <div class="copyright">
@@ -373,7 +313,6 @@
         prompt('Copy this page link:', window.location.href);
       }
     }
-
     // Keyboard Navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Home') {
